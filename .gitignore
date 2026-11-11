@@ -1,0 +1,4 @@
+build/
+output/
+*.class
+.DS_Store
