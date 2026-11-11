@@ -1,0 +1,37 @@
+release_id,element_id,variant_id,process_id,process_name,element_type,element_subtype,element_name,next_element_ids,role_id,role_name,evidence_reference,review_status,selected_for_release,notes
+2027-Q1,P-START,V1,PROC-P,Partner Onboarding,EVENT,START,Application received,P-REVIEW,,,,REVIEWED,true,Intake begins
+2027-Q1,P-REVIEW,V1,PROC-P,Partner Onboarding,ACTIVITY,TASK,Review application,P-DECIDE,R-REG,Regional Manager,Draft procedure,PROPOSED,true,Owner not confirmed
+2027-Q1,P-DECIDE,V1,PROC-P,Partner Onboarding,GATEWAY,EXCLUSIVE,Application complete?,P-APPROVE|P-REQUEST,,,,REVIEWED,true,Branch labels not yet modeled
+2027-Q1,P-APPROVE,V1,PROC-P,Partner Onboarding,ACTIVITY,TASK,Approve partner,P-END,,,,PROPOSED,true,Ownership unresolved
+2027-Q1,P-REQUEST,V1,PROC-P,Partner Onboarding,ACTIVITY,TASK,Request clarification,P-REVIEW,R-REG,Regional Manager,Draft procedure,PROPOSED,true,Loop back
+2027-Q1,P-END,V1,PROC-P,Partner Onboarding,EVENT,END,Onboarding ends,,,,,REVIEWED,true,
+2027-Q2,P-START,V1,PROC-P,Partner Onboarding,EVENT,START,Application received,P-REVIEW,,,,REVIEWED,true,Intake begins
+2027-Q2,P-REVIEW,V2,PROC-P,Partner Onboarding,ACTIVITY,TASK,Review application,P-DECIDE,R-OPS,Operations Director,Revised procedure,APPROVED,true,Owner updated
+2027-Q2,P-DECIDE,V1,PROC-P,Partner Onboarding,GATEWAY,EXCLUSIVE,Application complete?,P-APPROVE|P-REQUEST,,,,REVIEWED,true,Branch labels not yet modeled
+2027-Q2,P-APPROVE,V2,PROC-P,Partner Onboarding,ACTIVITY,TASK,Approve partner,P-END,R-COMP,Compliance Officer,Approval matrix,APPROVED,true,Ownership confirmed
+2027-Q2,P-REQUEST,V1,PROC-P,Partner Onboarding,ACTIVITY,TASK,Request clarification,P-REVIEW,R-REG,Regional Manager,Draft procedure,PROPOSED,true,Loop back
+2027-Q2,P-END,V1,PROC-P,Partner Onboarding,EVENT,END,Onboarding ends,,,,,REVIEWED,true,
+2027-Q1,G-START,V1,PROC-G,Policy Governance,EVENT,START,Policy issued,G-INTERPRET,,,Policy register,REVIEWED,true,External authority originates policy
+2027-Q1,G-INTERPRET,V1,PROC-G,Policy Governance,ACTIVITY,TASK,Interpret policy for program,G-DECIDE,R-PMO,Program Management,Policy assessment,PROPOSED,true,Interpretation is not itself policy
+2027-Q1,G-DECIDE,V1,PROC-G,Policy Governance,GATEWAY,EXCLUSIVE,Requirements accepted?,G-COORD|G-INTERPRET,,,,REVIEWED,true,Return for revision if not accepted
+2027-Q1,G-COORD,V1,PROC-G,Policy Governance,ACTIVITY,TASK,Coordinate implementation owners,G-VERIFY,R-PMO,Program Management,Requirements register,REVIEWED,true,Not operating the controls
+2027-Q1,G-VERIFY,V1,PROC-G,Policy Governance,ACTIVITY,TASK,Check reported readiness,G-END,R-GOV,Governance Reviewer,Owner attestations,PROPOSED,true,Evidence is reported rather than directly observed
+2027-Q1,G-END,V1,PROC-G,Policy Governance,EVENT,END,Assessment recorded,,,,,REVIEWED,true,
+2027-Q2,G-START,V1,PROC-G,Policy Governance,EVENT,START,Policy issued,G-INTERPRET,,,Policy register,REVIEWED,true,External authority originates policy
+2027-Q2,G-INTERPRET,V2,PROC-G,Policy Governance,ACTIVITY,TASK,Interpret policy for program,G-DECIDE,R-PMO,Program Management,Policy assessment,APPROVED,true,Interpretation is not itself policy
+2027-Q2,G-DECIDE,V1,PROC-G,Policy Governance,GATEWAY,EXCLUSIVE,Requirements accepted?,G-COORD|G-INTERPRET,,,,REVIEWED,true,Return for revision if not accepted
+2027-Q2,G-COORD,V1,PROC-G,Policy Governance,ACTIVITY,TASK,Coordinate implementation owners,G-VERIFY,R-PMO,Program Management,Requirements register,REVIEWED,true,Not operating the controls
+2027-Q2,G-VERIFY,V1,PROC-G,Policy Governance,ACTIVITY,TASK,Check reported readiness,G-END,R-GOV,Governance Reviewer,Owner attestations,PROPOSED,true,Evidence is reported rather than directly observed
+2027-Q2,G-END,V1,PROC-G,Policy Governance,EVENT,END,Assessment recorded,,,,,REVIEWED,true,
+2027-Q1,D-START,V1,PROC-D,Program Readiness,EVENT,START,Deployment requested,D-SPLIT,,,,REVIEWED,true,
+2027-Q1,D-SPLIT,V1,PROC-D,Program Readiness,GATEWAY,PARALLEL,Readiness workstreams,D-TECH|D-OPS,,,,REVIEWED,true,Simultaneous checks
+2027-Q1,D-TECH,V1,PROC-D,Program Readiness,ACTIVITY,TASK,Confirm technology readiness,D-DECIDE,R-TECH,Technology Lead,Integration checklist,PROPOSED,true,Infrastructure dependency
+2027-Q1,D-OPS,V1,PROC-D,Program Readiness,ACTIVITY,TASK,Confirm operations readiness,D-DECIDE,R-OPS,Operations Director,Training checklist,PROPOSED,true,Staffing dependency
+2027-Q1,D-DECIDE,V1,PROC-D,Program Readiness,GATEWAY,EXCLUSIVE,Go-live ready?,D-END|D-TECH,,,Decision register,REVIEWED,true,Not a formal parallel gateway join
+2027-Q1,D-END,V1,PROC-D,Program Readiness,EVENT,END,Readiness assessed,,,,,REVIEWED,true,
+2027-Q2,D-START,V1,PROC-D,Program Readiness,EVENT,START,Deployment requested,D-SPLIT,,,,REVIEWED,true,
+2027-Q2,D-SPLIT,V1,PROC-D,Program Readiness,GATEWAY,PARALLEL,Readiness workstreams,D-TECH|D-OPS,,,,REVIEWED,true,Simultaneous checks
+2027-Q2,D-TECH,V2,PROC-D,Program Readiness,ACTIVITY,TASK,Confirm technology readiness,D-DECIDE,R-TECH,Technology Lead,Integration checklist,APPROVED,true,Infrastructure dependency
+2027-Q2,D-OPS,V1,PROC-D,Program Readiness,ACTIVITY,TASK,Confirm operations readiness,D-DECIDE,R-OPS,Operations Director,Training checklist,PROPOSED,true,Staffing dependency
+2027-Q2,D-DECIDE,V1,PROC-D,Program Readiness,GATEWAY,EXCLUSIVE,Go-live ready?,D-END|D-TECH,,,Decision register,REVIEWED,true,Not a formal parallel gateway join
+2027-Q2,D-END,V1,PROC-D,Program Readiness,EVENT,END,Readiness assessed,,,,,REVIEWED,true,

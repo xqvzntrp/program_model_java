@@ -1,0 +1,20 @@
+release_id,element_id,evidence_reference
+2027-Q1,P-REVIEW,Draft procedure
+2027-Q1,P-REQUEST,Draft procedure
+2027-Q1,G-START,Policy register
+2027-Q1,G-INTERPRET,Policy assessment
+2027-Q1,G-COORD,Requirements register
+2027-Q1,G-VERIFY,Owner attestations
+2027-Q1,D-TECH,Integration checklist
+2027-Q1,D-OPS,Training checklist
+2027-Q1,D-DECIDE,Decision register
+2027-Q2,P-REVIEW,Revised procedure
+2027-Q2,P-APPROVE,Approval matrix
+2027-Q2,P-REQUEST,Draft procedure
+2027-Q2,G-START,Policy register
+2027-Q2,G-INTERPRET,Policy assessment
+2027-Q2,G-COORD,Requirements register
+2027-Q2,G-VERIFY,Owner attestations
+2027-Q2,D-TECH,Integration checklist
+2027-Q2,D-OPS,Training checklist
+2027-Q2,D-DECIDE,Decision register

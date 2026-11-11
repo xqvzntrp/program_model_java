@@ -1,0 +1,16 @@
+release_id,element_id,role_id,role_name
+2027-Q1,P-REVIEW,R-REG,Regional Manager
+2027-Q1,P-REQUEST,R-REG,Regional Manager
+2027-Q1,G-INTERPRET,R-PMO,Program Management
+2027-Q1,G-COORD,R-PMO,Program Management
+2027-Q1,G-VERIFY,R-GOV,Governance Reviewer
+2027-Q1,D-TECH,R-TECH,Technology Lead
+2027-Q1,D-OPS,R-OPS,Operations Director
+2027-Q2,P-REVIEW,R-OPS,Operations Director
+2027-Q2,P-APPROVE,R-COMP,Compliance Officer
+2027-Q2,P-REQUEST,R-REG,Regional Manager
+2027-Q2,G-INTERPRET,R-PMO,Program Management
+2027-Q2,G-COORD,R-PMO,Program Management
+2027-Q2,G-VERIFY,R-GOV,Governance Reviewer
+2027-Q2,D-TECH,R-TECH,Technology Lead
+2027-Q2,D-OPS,R-OPS,Operations Director
