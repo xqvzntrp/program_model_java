@@ -35,6 +35,30 @@ public final class CsvStore {
         return rows;
     }
 
+    /** Generic CSV I/O for prepared relational projections. */
+    public static void writeTable(Path target, List<String> header, List<List<String>> data) throws IOException {
+        StringBuilder out = new StringBuilder();
+        out.append(String.join(",", header)).append("\r\n");
+        for (List<String> row : data) {
+            if (row.size() != header.size()) throw new IllegalArgumentException("Wrong projection column count");
+            StringJoiner join = new StringJoiner(",");
+            for (String cell : row) join.add(escape(cell));
+            out.append(join).append("\r\n");
+        }
+        Files.createDirectories(target.toAbsolutePath().getParent());
+        Files.writeString(target, out.toString(), StandardCharsets.UTF_8);
+    }
+
+    public static List<List<String>> readTable(Path target, List<String> expectedHeader) throws IOException {
+        List<List<String>> rows = parse(Files.readString(target, StandardCharsets.UTF_8));
+        if (rows.isEmpty() || !rows.get(0).equals(expectedHeader))
+            throw new IllegalArgumentException("Projection header mismatch: " + target);
+        for (List<String> row : rows.subList(1, rows.size())) {
+            if (row.size() != expectedHeader.size()) throw new IllegalArgumentException("Projection row width mismatch");
+        }
+        return rows.subList(1, rows.size());
+    }
+
     private static String escape(String s) {
         if (s.contains(",") || s.contains("\"") || s.contains("\n") || s.contains("\r"))
             return "\"" + s.replace("\"", "\"\"") + "\"";
