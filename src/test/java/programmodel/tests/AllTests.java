@@ -36,8 +36,8 @@ public final class AllTests {
         List<ModelRow> rows=SeedJob.rows();
         eq(36,rows.size());
         Validator.validate(rows);
-        eq(3,rows.stream().map(ModelRow::processId).distinct().count());
-        eq(2,rows.stream().map(ModelRow::releaseId).distinct().count());
+        eq(3L,rows.stream().map(ModelRow::processId).distinct().count());
+        eq(2L,rows.stream().map(ModelRow::releaseId).distinct().count());
         eq(Set.of("ACTIVITY","EVENT","GATEWAY"),new HashSet<>(rows.stream().map(ModelRow::elementType).toList()));
     }
 
@@ -101,7 +101,7 @@ public final class AllTests {
         eq(18,Publisher.publish(draft,pub,"2027-Q1"));
         eq(18,Publisher.publish(draft,pub,"2027-Q2"));
         eq(36,CsvStore.read(pub).size());
-        eq(18,CsvStore.read(pub).stream().filter(x->x.releaseId().equals("2027-Q1")).count());
+        eq(18L,CsvStore.read(pub).stream().filter(x->x.releaseId().equals("2027-Q1")).count());
     }
 
     private static void immutableRelease() throws Exception {
